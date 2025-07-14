@@ -1,0 +1,195 @@
+/* Main container styles */
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.page-title {
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* Undo section styles */
+.undo-section {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem auto;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #ef4444;
+}
+
+.removed-text {
+  margin: 0;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.undo-btn {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.undo-btn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.undo-btn:active {
+  transform: translateY(0);
+}
+
+/* Animation for smoother transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Table layout styles */
+.app-layout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.full-width-cell {
+  width: 100%;
+  padding: 0;
+}
+
+.main-content-cell {
+  width: 70%;
+  padding: 0;
+  vertical-align: top;
+}
+
+.sidebar-cell {
+  width: 30%;
+  padding: 0 0 0 1.5rem;
+  vertical-align: top;
+}
+
+/* Existing styles with adjustments for table layout */
+.student-form-container,
+.student-list-container,
+.topper-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-layout-table,
+  .main-content-cell,
+  .sidebar-cell,
+  .full-width-cell {
+    display: block;
+    width: 100%;
+  }
+  
+  .sidebar-cell {
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+
+  .App {
+    padding: 1rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .undo-section {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+.export-btn {
+  background-color: #2ecc71;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.export-btn:hover {
+  background-color: #27ae60;
+}
+
+.filter-section {
+  margin: 1rem auto;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.filter-section select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.search-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  margin: 1rem auto 2rem;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.sort-dropdown {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
