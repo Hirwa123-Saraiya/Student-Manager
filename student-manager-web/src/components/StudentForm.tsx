@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Student } from "../types/Student";
-import "./Student-form.css"; // Import the CSS file
+import "./Student-form.css"; 
 
 interface Props {
   addStudent: (student: Student) => void;

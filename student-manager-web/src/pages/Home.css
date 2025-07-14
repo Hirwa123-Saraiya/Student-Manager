@@ -181,29 +181,6 @@
   color: #e53935;
 }
 
-/* .rank-distribution {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #f1f9ff;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
-}
-
-.rank-distribution h4 {
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-}
-
-.rank-distribution p {
-  margin: 0.3rem 0;
-  font-size: 1rem;
-}
-
-.rank-distribution p::before {
-  margin-right: 0.4rem;
-  font-size: 1.1rem;
-} */
-
 .rank-distribution {
   margin-top: 2rem;
   padding: 1.5rem;
@@ -243,7 +220,6 @@
   font-weight: 500;
 }
 
-/* Optional: Add color indicators based on category */
 .rank-distribution p:nth-child(2) {
   border-left: 6px solid #43a047;
 }
