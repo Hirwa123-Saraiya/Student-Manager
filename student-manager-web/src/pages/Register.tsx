@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
@@ -150,6 +151,9 @@ const Register = () => {
             {loading ? "Registering..." : "Register"}
           </button>
         </form>
+        <p className="redirect-text">
+          Already have an account? <Link to="/login">Login here</Link>
+        </p>
       </div>
     </div>
   );

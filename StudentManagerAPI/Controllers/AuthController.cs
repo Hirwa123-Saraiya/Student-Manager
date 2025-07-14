@@ -59,5 +59,22 @@ namespace StudentManagerAPI.Controllers
 
             return Ok(new { message = "Login successful", user.Email });
         }
+
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] User userInput)
+        {
+            if (string.IsNullOrWhiteSpace(userInput.Email) || string.IsNullOrWhiteSpace(userInput.Password))
+                return BadRequest(new { message = "Email and new password are required." });
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == userInput.Email.ToLower());
+
+            if (user == null)
+                return NotFound(new { message = "User not found." });
+
+            user.Password = userInput.Password; // Hash this if you implement hashing
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Password updated successfully." });
+        }
     }
 }
