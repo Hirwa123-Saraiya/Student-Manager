@@ -9,6 +9,14 @@ const ForgotPassword: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const isValidPassword = (password: string) => {
+    const pattern = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d@_]{8}$/;
+    return pattern.test(password);
+  };
+
+  const isValidEmail = (email: string) =>
+    /^[^\s@]+@(gmail\.com|yahoo\.in)$/.test(email);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -21,6 +29,19 @@ const ForgotPassword: React.FC = () => {
     e.preventDefault();
     setMessage("");
     setError("");
+
+    if (!isValidEmail(formData.email)) {
+      setError("Only Gmail and Yahoo India emails are allowed.");
+      return;
+    }
+
+    if (!isValidPassword(formData.newPassword)) {
+      setError(
+        "Password must be at least 8 characters long, contain 1 uppercase, 1 lowercase, and only use '@' or '_' as special characters."
+      );
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -29,10 +50,9 @@ const ForgotPassword: React.FC = () => {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          // body: JSON.stringify(formData),
           body: JSON.stringify({
             email: formData.email,
-            password: formData.newPassword, 
+            password: formData.newPassword,
           }),
         }
       );
@@ -42,6 +62,7 @@ const ForgotPassword: React.FC = () => {
 
       if (response.ok) {
         setMessage("Password updated! Please login.");
+        setFormData({ email: "", newPassword: "" }); // optional: reset form
       } else {
         setError(data.message || "Failed to update password.");
       }

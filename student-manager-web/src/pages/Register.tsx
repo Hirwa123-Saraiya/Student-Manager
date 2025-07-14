@@ -15,6 +15,11 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  const isValidPassword = (password: string) => {
+    const pattern = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d@_]{8}$/;
+    return pattern.test(password);
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -22,6 +27,14 @@ const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+
+    if (!isValidPassword(formData.password)) {
+      setError(
+        "Password must be at least 8 characters long, contain 1 uppercase, 1 lowercase, and only use '@' or '_' as special characters."
+      );
+      setLoading(false);
+      return;
+    }
     setLoading(true);
 
     if (formData.password !== formData.confirmPassword) {
