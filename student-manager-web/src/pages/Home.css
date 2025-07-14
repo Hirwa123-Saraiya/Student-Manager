@@ -1,195 +1,258 @@
-/* Main container styles */
 .App {
-  max-width: 900px;
-  margin: 0 auto;
   padding: 2rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f8fafc;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
 }
 
-/* Header styles */
 .page-title {
-  color: #1e293b;
   text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  position: relative;
-  padding-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.page-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  border-radius: 2px;
-}
-
-/* Undo section styles */
-.undo-section {
-  background-color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  margin: 1.5rem auto;
-  max-width: 500px;
+.search-sort-bar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #ef4444;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.removed-text {
-  margin: 0;
-  color: #64748b;
-  font-weight: 500;
-}
-
-.undo-btn {
-  background-color: #6366f1;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
+.search-input,
+.sort-dropdown,
+.range-box {
+  padding: 0.5rem;
   border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.range-inputs {
   display: flex;
-  align-items: center;
   gap: 0.5rem;
 }
 
-.undo-btn:hover {
-  background-color: #4f46e5;
-  transform: translateY(-1px);
-}
-
-.undo-btn:active {
-  transform: translateY(0);
-}
-
-/* Animation for smoother transitions */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Table layout styles */
 .app-layout-table {
   width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
+  border-spacing: 1rem;
 }
 
 .full-width-cell {
-  width: 100%;
-  padding: 0;
+  text-align: center;
 }
 
 .main-content-cell {
   width: 70%;
-  padding: 0;
   vertical-align: top;
 }
 
 .sidebar-cell {
   width: 30%;
-  padding: 0 0 0 1.5rem;
   vertical-align: top;
 }
 
-/* Existing styles with adjustments for table layout */
 .student-form-container,
 .student-list-container,
 .topper-container {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
-              0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .app-layout-table,
-  .main-content-cell,
-  .sidebar-cell,
-  .full-width-cell {
-    display: block;
-    width: 100%;
-  }
-  
-  .sidebar-cell {
-    padding: 0;
-    margin-top: 1.5rem;
-  }
-
-  .App {
-    padding: 1rem;
-  }
-  
-  .page-title {
-    font-size: 2rem;
-  }
-  
-  .undo-section {
-    flex-direction: column;
-    gap: 0.75rem;
-    text-align: center;
-  }
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .export-btn {
-  background-color: #2ecc71;
+  background-color: #27ae60;
   color: white;
-  padding: 8px 14px;
   border: none;
+  padding: 0.6rem 1rem;
   border-radius: 6px;
-  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .export-btn:hover {
-  background-color: #27ae60;
+  background-color: #219150;
 }
 
-.filter-section {
-  margin: 1rem auto;
-  max-width: 300px;
+.undo-section {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.removed-text {
+  color: #c0392b;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.undo-btn {
+  background-color: #e67e22;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.undo-btn:hover {
+  background-color: #d35400;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination-controls button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.student-summary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e3f2fd, #f9f9f9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.student-summary:hover {
+  transform: scale(1.02);
+}
+
+.student-summary h3 {
+  text-align: center;
+  color: #1565c0;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.student-summary p {
+  font-size: 1.05rem;
+  margin: 0.6rem 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.filter-section select {
-  padding: 0.5rem;
+  justify-content: space-between;
+  padding: 0.4rem 1rem;
+  background-color: #ffffffc2;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.search-input {
-  padding: 10px;
-  width: 100%;
-  max-width: 400px;
+.student-summary p::before {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.student-summary p:nth-child(2)::before {
+  content: "👥";
+}
+.student-summary p:nth-child(3)::before {
+  content: "📈";
+  color: #43a047;
+}
+.student-summary p:nth-child(4)::before {
+  content: "🎓";
+  color: #1e88e5;
+}
+.student-summary p:nth-child(5)::before {
+  content: "🏆";
+  color: #fdd835;
+}
+.student-summary p:nth-child(6)::before {
+  content: "❌";
+  color: #e53935;
+}
+
+/* .rank-distribution {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f1f9ff;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.rank-distribution h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.rank-distribution p {
+  margin: 0.3rem 0;
   font-size: 1rem;
-  margin: 1rem auto 2rem;
-  display: block;
+}
+
+.rank-distribution p::before {
+  margin-right: 0.4rem;
+  font-size: 1.1rem;
+} */
+
+.rank-distribution {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(to right, #e3f2fd, #f1f8e9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.rank-distribution:hover {
+  transform: scale(1.02);
+}
+
+.rank-distribution h4 {
+  color: #0d47a1;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #64b5f6;
+  padding-bottom: 0.3rem;
+}
+
+.rank-distribution p {
+  font-size: 1.05rem;
+  margin: 0.6rem 0;
+  padding: 0.6rem 1rem;
   border-radius: 6px;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffffcc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  font-weight: 500;
 }
 
-.sort-dropdown {
-  margin: 1rem 0;
-  padding: 0.5rem;
-  font-size: 1rem;
+/* Optional: Add color indicators based on category */
+.rank-distribution p:nth-child(2) {
+  border-left: 6px solid #43a047;
+}
+.rank-distribution p:nth-child(3) {
+  border-left: 6px solid #1e88e5;
+}
+.rank-distribution p:nth-child(4) {
+  border-left: 6px solid #fbc02d;
+}
+.rank-distribution p:nth-child(5) {
+  border-left: 6px solid #e53935;
 }

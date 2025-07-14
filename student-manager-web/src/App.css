@@ -1,3 +1,4 @@
+/* App.css */
 .export-btn {
   background-color: #3498db;
   color: white;
@@ -6,4 +7,44 @@
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  background-color: #2c3e50;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation Links */
+.nav-link {
+  color: #ecf0f1;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s ease-in-out, border-bottom 0.2s ease-in-out;
+  position: relative;
+}
+
+/* Underline effect on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #1abc9c;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #1abc9c;
 }

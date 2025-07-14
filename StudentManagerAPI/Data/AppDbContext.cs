@@ -8,5 +8,6 @@ namespace StudentManagerAPI.Data
         public AppDbContext(DbContextOptions options) : base(options) {}
 
         public DbSet<Student> Students => Set<Student>();
+        public DbSet<User> Users { get; set; }
     }
 }
